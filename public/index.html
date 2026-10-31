@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic Tac Toe Arena Online</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="card">
+    <!-- Lobby -->
+    <section id="lobby">
+      <h1>Tic Tac Toe Arena</h1>
+      <p class="sub">Dost ke saath online khelo</p>
+      <button id="createBtn" class="primary">Create Room</button>
+      <div class="divider"><span>ya</span></div>
+      <div class="join-row">
+        <input id="codeInput" maxlength="5" placeholder="5-letter code" autocomplete="off" />
+        <button id="joinBtn">Join Room</button>
+      </div>
+      <p id="lobbyError" class="error"></p>
+    </section>
+
+    <!-- Game -->
+    <section id="game" hidden>
+      <div class="top">
+        <div>
+          <h2 id="status">Waiting...</h2>
+          <p id="subStatus" class="sub"></p>
+        </div>
+        <div class="scores">
+          <div><b id="scoreX">0</b><span>Player X</span></div>
+          <div><b id="scoreO">0</b><span>Player O</span></div>
+          <div><b id="scoreD">0</b><span>Draws</span></div>
+        </div>
+      </div>
+
+      <div class="roombox" id="roomBox">
+        Room code: <strong id="roomCode"></strong>
+        <button id="copyBtn" class="small">Copy</button>
+      </div>
+
+      <div id="board" class="board"></div>
+
+      <div class="actions">
+        <button id="rematchBtn" class="primary" hidden>Rematch</button>
+        <button id="leaveBtn">Leave</button>
+      </div>
+      <p class="you">Tum ho: <strong id="mySymbol"></strong></p>
+    </section>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
